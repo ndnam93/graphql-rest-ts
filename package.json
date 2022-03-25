@@ -1,0 +1,25 @@
+{
+  "name": "graphql-rest-ts",
+  "version": "1.0.0",
+  "description": "A simple server which features both REST and GraphQL APIs",
+  "main": "./src/app.ts",
+  "scripts": {
+    "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
+    "watch": "nodemon --watch 'src/**/*' -e ts,tsx,js --exec \"npm start\"",
+    "build": "rm -r ./dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "semistandard": "^16.0.1"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.6.6",
+    "express": "^4.17.3",
+    "sequelize": "^6.17.0",
+    "sqlite3": "^5.0.2"
+  }
+}
