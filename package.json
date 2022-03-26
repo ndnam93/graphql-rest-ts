@@ -7,18 +7,25 @@
     "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
     "watch": "nodemon --watch 'src/**/*' -e ts,tsx,js --exec \"npm start\"",
     "build": "rm -r ./dist && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.4.8",
+    "@graphql-codegen/typescript-resolvers": "^2.6.1",
     "nodemon": "^2.0.15",
     "semistandard": "^16.0.1"
   },
   "dependencies": {
+    "apollo-server-core": "^3.6.6",
     "apollo-server-express": "^3.6.6",
     "express": "^4.17.3",
+    "graphql": "^16.3.0",
+    "morgan": "^1.10.0",
     "sequelize": "^6.17.0",
     "sqlite3": "^5.0.2"
   }
