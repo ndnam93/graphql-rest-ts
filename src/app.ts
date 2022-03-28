@@ -6,8 +6,11 @@ import logger from 'morgan';
 import routes from './routes/index';
 import typeDefs from './graphql/schema';
 import resolvers from './graphql/resolvers';
+import sequelize from './models';
 
 (async () => {
+    await sequelize.sync();
+    
     const app = express();
     app.use(logger('dev'));
     app.use('/api', routes);

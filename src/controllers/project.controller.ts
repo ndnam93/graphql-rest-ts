@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import sequelize from '../models';
-
-const Project = sequelize.models.Project;
+import Project from '../models/Project.model';
 
 /**
  * Load Project and append to req.

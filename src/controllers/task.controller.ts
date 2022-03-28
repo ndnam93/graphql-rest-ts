@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import sequelize from '../models';
-
-const Task = sequelize.models.Task;
+import Task from '../models/Task.model';
 
 /**
  * Load Task and append to req.

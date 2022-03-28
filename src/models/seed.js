@@ -1,7 +1,12 @@
-
+import sequelize from ".";
+import User from "./User.model";
+import Project from "./Project.model";
+import Task from "./Task.model";
 // Add some data in the database
-export default function (sequelize) {
-  const { User, Project, Task } = sequelize.models;
+// const { User, Project, Task } = sequelize.models;
+
+(async () => {
+  await sequelize.sync({ force: true });
 
   User.create({
     firstname: 'John',
@@ -10,31 +15,31 @@ export default function (sequelize) {
   })
   .then((user) => Project.create({
     name: 'Migrate from REST to GraphQL',
-    UserId: user.id
+    userId: user.id
   }))
   .then((project) => {
     Task.create({
       description: 'Read tutorial',
-      ProjectId: project.id
+      projectId: project.id
     });
     Task.create({
       description: 'Start coding',
-      ProjectId: project.id
+      projectId: project.id
     });
     return Promise.resolve(project);
   })
   .then((project) => Project.create({
     name: 'Create a blog',
-    UserId: project.UserId
+    userId: project.userId
   }))
   .then((project) => {
     Task.create({
       description: 'Write draft of article',
-      ProjectId: project.id
+      projectId: project.id
     });
     Task.create({
       description: 'Set up blog platform',
-      ProjectId: project.id
+      projectId: project.id
     });
     return Promise.resolve();
   })
@@ -45,32 +50,34 @@ export default function (sequelize) {
   }))
   .then((user) => Project.create({
     name: 'Email Marketing Campaign',
-    UserId: user.id
+    userId: user.id
   }))
   .then((project) => {
     Task.create({
       description: 'Get list of users',
-      ProjectId: project.id
+      projectId: project.id
     });
     Task.create({
       description: 'Write email template',
-      ProjectId: project.id
+      projectId: project.id
     });
     return Promise.resolve(project);
   })
   .then((project) => Project.create({
     name: 'Hire new developer',
-    UserId: project.UserId
+    userId: project.userId
   }))
   .then((project) => {
     Task.create({
       description: 'Find candidates',
-      ProjectId: project.id
+      projectId: project.id
     });
     Task.create({
       description: 'Prepare interview',
-      ProjectId: project.id
+      projectId: project.id
     });
     return Promise.resolve();
   });
-}
+  
+})();
+

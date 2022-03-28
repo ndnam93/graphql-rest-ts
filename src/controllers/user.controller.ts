@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import sequelize from '../models';
-
-const User = sequelize.models.User;
+import User from '../models/User.model';
 
 /**
  * Load user and append to req.
