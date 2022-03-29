@@ -31,9 +31,9 @@ export type RootMutation = {
   createProject?: Maybe<Project>;
   createTask?: Maybe<Task>;
   createUser?: Maybe<User>;
-  removeProject?: Maybe<Project>;
-  removeTask?: Maybe<Task>;
-  removeUser?: Maybe<User>;
+  removeProject?: Maybe<Scalars['Boolean']>;
+  removeTask?: Maybe<Scalars['Boolean']>;
+  removeUser?: Maybe<Scalars['Boolean']>;
   updateProject?: Maybe<Project>;
   updateTask?: Maybe<Task>;
   updateUser?: Maybe<User>;
@@ -247,9 +247,9 @@ export type RootMutationResolvers<ContextType = any, ParentType extends Resolver
   createProject?: Resolver<Maybe<ResolversTypes['Project']>, ParentType, ContextType, RequireFields<RootMutationCreateProjectArgs, 'input'>>;
   createTask?: Resolver<Maybe<ResolversTypes['Task']>, ParentType, ContextType, RequireFields<RootMutationCreateTaskArgs, 'input'>>;
   createUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<RootMutationCreateUserArgs, 'input'>>;
-  removeProject?: Resolver<Maybe<ResolversTypes['Project']>, ParentType, ContextType, RequireFields<RootMutationRemoveProjectArgs, 'id'>>;
-  removeTask?: Resolver<Maybe<ResolversTypes['Task']>, ParentType, ContextType, RequireFields<RootMutationRemoveTaskArgs, 'id'>>;
-  removeUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<RootMutationRemoveUserArgs, 'id'>>;
+  removeProject?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<RootMutationRemoveProjectArgs, 'id'>>;
+  removeTask?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<RootMutationRemoveTaskArgs, 'id'>>;
+  removeUser?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<RootMutationRemoveUserArgs, 'id'>>;
   updateProject?: Resolver<Maybe<ResolversTypes['Project']>, ParentType, ContextType, RequireFields<RootMutationUpdateProjectArgs, 'id' | 'input'>>;
   updateTask?: Resolver<Maybe<ResolversTypes['Task']>, ParentType, ContextType, RequireFields<RootMutationUpdateTaskArgs, 'id' | 'input'>>;
   updateUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<RootMutationUpdateUserArgs, 'id' | 'input'>>;

@@ -51,13 +51,13 @@ type RootQuery {
 type RootMutation {
   createUser(input: UserInput!): User
   updateUser(id: ID!, input: UserInput!): User
-  removeUser(id: ID!): User
+  removeUser(id: ID!): Boolean
   createProject(input: ProjectInput!): Project
   updateProject(id: ID!, input: ProjectInput!): Project
-  removeProject(id: ID!): Project
+  removeProject(id: ID!): Boolean
   createTask(input: TaskInput!): Task
   updateTask(id: ID!, input: TaskInput!): Task
-  removeTask(id: ID!): Task
+  removeTask(id: ID!): Boolean
 }
 
 # We need to tell the server which types represent the root query.
